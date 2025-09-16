@@ -1,3 +1,4 @@
+import photo2 from '../assets/ttt.png';
 import { useState } from 'react';
 
 const Projects = () => {
@@ -8,7 +9,7 @@ const Projects = () => {
       id: 1,
       title: 'Tic-Tac-Toe Game',
       category: 'app',
-      image: 'src/assets/ttt.png',
+      image: photo2,
       description: 'A simple tic tac toe game created with React',
       technologies: ['React', 'Vite'],
       link: '#'

@@ -1,3 +1,5 @@
+import photo1 from '../assets/photo1.jpg';
+
 const About = () => {
   return (
     <section id="about" className="py-20">
@@ -12,8 +14,8 @@ const About = () => {
             <div className="relative">
               <div className="w-full h-80 md:h-96 rounded-lg overflow-hidden">
                 <img 
-                  src="src/assets/photo1.jpg"
-                  alt="" 
+                  src={photo1}
+                  alt="About Me" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -61,4 +63,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;
