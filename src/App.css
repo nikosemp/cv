@@ -1,0 +1,703 @@
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(128, 128, 128, 0.6));
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(128, 128, 128, 0.6));
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Custom styles for the portfolio */
+
+/* Apply Inter font to the entire app */
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animation for the typing cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-pulse {
+  animation: blink 1s infinite;
+}
+
+/* Transition for colors */
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Portfolio container */
+.portfolio-container {
+  min-height: 100vh;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Glass effect for containers */
+.glass-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern navbar styling */
+header {
+  width: 100% !important;
+  background: transparent !important;
+  transition: all 0.5s ease-in-out !important;
+}
+
+header.backdrop {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.5s ease-in-out;
+}
+
+header.backdrop-strong {
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.5s ease-in-out;
+}
+
+header.solid-navbar {
+  background: #121212 !important;
+  transition: all 0.5s ease-in-out;
+}
+
+header a {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+header nav a:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+header nav a:not(:last-child):hover::after {
+  width: 30px;
+}
+
+/* Floating effect for navbar at top of page */
+@keyframes float-navbar {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Apply floating animation only on desktop, not on mobile */
+@media (min-width: 768px) {
+  header:not(.solid-navbar) {
+    animation: float-navbar 6s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar link hover effect */
+header nav a.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+header nav a.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #67e8f9;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+header nav a.nav-link:hover::before {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Fade in animation for navbar items */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header nav a {
+  animation: fadeInDown 0.5s ease forwards;
+  opacity: 0;
+}
+
+header nav a:nth-child(1) { animation-delay: 0.1s; }
+header nav a:nth-child(2) { animation-delay: 0.2s; }
+header nav a:nth-child(3) { animation-delay: 0.3s; }
+header nav a:nth-child(4) { animation-delay: 0.4s; }
+header nav a:nth-child(5) { animation-delay: 0.5s; }
+header nav a:nth-child(6) { animation-delay: 0.6s; }
+
+/* Fade in animation for mobile menu */
+.mobile-menu-item {
+  animation: fadeInRight 0.5s ease forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-overlay.visible .mobile-menu-item {
+  opacity: 1 !important;
+}
+
+/* Full-width section styling */
+main {
+  width: 100%;
+  padding-top: 80px; /* Add padding for fixed header */
+}
+
+main > section {
+  width: 100%;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+/* Content container for sections */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Section backgrounds */
+section {
+  background-color: transparent !important;
+}
+
+/* Section content containers */
+section .section-content {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+section .section-content:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards and project items */
+.card, .project-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover, .project-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated Background Styles */
+@keyframes move-twink-back {
+  from {background-position: 0 0;}
+  to {background-position: -10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+  from {background-position: 0 0;}
+  to {background-position: 10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
+  z-index: 0;
+}
+
+.twinkling {
+  background: transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
+  z-index: 1;
+  animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+  background: transparent url('https://i.imgur.com/mHbScrQ.png') repeat top center;
+  z-index: 2;
+  opacity: 0.4;
+  animation: move-clouds-back 150s linear infinite;
+}
+
+/* Floating animation for elements */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glowing text effect */
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 30px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.glow-text {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Animated Particles */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.particle1 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  top: 10%;
+  left: 10%;
+  animation: particle1 15s infinite linear;
+}
+
+.particle2 {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
+  top: 20%;
+  right: 20%;
+  animation: particle2 25s infinite linear;
+}
+
+.particle3 {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+  bottom: 30%;
+  left: 30%;
+  animation: particle3 20s infinite linear;
+}
+
+.particle4 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
+  bottom: 10%;
+  right: 10%;
+  animation: particle4 30s infinite linear;
+}
+
+.particle5 {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
+  top: 50%;
+  left: 50%;
+  animation: particle5 18s infinite linear;
+}
+
+@keyframes particle1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(100px, 100px) scale(1.2);
+  }
+  50% {
+    transform: translate(200px, 0) scale(1);
+  }
+  75% {
+    transform: translate(100px, -100px) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes particle2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-100px, 100px) scale(1.3);
+  }
+  66% {
+    transform: translate(-200px, -100px) scale(0.7);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes particle3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(150px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(0, -100px) scale(0.9);
+  }
+  75% {
+    transform: translate(-150px, -50px) scale(1.2);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes particle4 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(-100px, -100px) scale(0.8);
+  }
+  40% {
+    transform: translate(-200px, 0) scale(1.2);
+  }
+  60% {
+    transform: translate(-100px, 100px) scale(1);
+  }
+  80% {
+    transform: translate(100px, 50px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes particle5 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  30% {
+    transform: translate(100px, -80px) scale(1.2);
+  }
+  60% {
+    transform: translate(-100px, -80px) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Section dividers */
+.section-divider {
+  height: 100px;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  overflow: hidden;
+}
+
+.divider-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('https://i.imgur.com/2GMPCgx.png') repeat-x;
+  background-size: 1000px 100px;
+  opacity: 0.2;
+}
+
+/* Tech Icons Floating Animation */
+.tech-icon-wrapper {
+  animation: float-tech 6s ease-in-out infinite;
+}
+
+.tech-icon-wrapper:nth-child(odd) {
+  animation-duration: 8s;
+}
+
+.tech-icon-wrapper:nth-child(3n) {
+  animation-duration: 10s;
+}
+
+.tech-icon-wrapper:nth-child(3n+1) {
+  animation-duration: 7s;
+}
+
+.tech-icon-wrapper:nth-child(5n) {
+  animation-duration: 11s;
+}
+
+@keyframes float-tech {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0px) translateX(0px);
+  }
+  75% {
+    transform: translateY(15px) translateX(-10px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* Skill section specific particles */
+.skill-particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.skill-particle1 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(97, 218, 251, 0.6) 0%, rgba(97, 218, 251, 0) 70%); /* React color */
+  top: 20%;
+  left: 15%;
+  animation: skill-particle1 20s infinite linear;
+}
+
+.skill-particle2 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(247, 223, 30, 0.6) 0%, rgba(247, 223, 30, 0) 70%); /* JavaScript color */
+  bottom: 25%;
+  right: 20%;
+  animation: skill-particle2 25s infinite linear;
+}
+
+.skill-particle3 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(56, 178, 172, 0.6) 0%, rgba(56, 178, 172, 0) 70%); /* Tailwind color */
+  bottom: 15%;
+  left: 30%;
+  animation: skill-particle3 22s infinite linear;
+}
+
+@keyframes skill-particle1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(100px, 50px) scale(1.2);
+  }
+  66% {
+    transform: translate(50px, 100px) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes skill-particle2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-80px, -40px) scale(1.1);
+  }
+  66% {
+    transform: translate(-40px, -80px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes skill-particle3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-60px, 60px) scale(1.2);
+  }
+  66% {
+    transform: translate(60px, -60px) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Tech icon hover effect */
+.tech-icon {
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+}
+
+.tech-icon:hover {
+  transform: scale(1.15);
+  box-shadow: none !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.tech-icon img {
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover img {
+  transform: rotate(10deg);
+}
